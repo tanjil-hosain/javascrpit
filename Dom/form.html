@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <form action="#" name="f">
+        Name :
+         <br> <br>
+         <input type="text" name="n"> <br>
+         Address : <br>
+         <textarea name="address" id=""></textarea> <br>
+         <input type="submit" value="Submit" onclick="info()">
+         <input type="reset">
+    </form>
+
+    <script>
+        function info(){
+          let   name = document.f.n.value;
+          let   address = document.f.address.value;
+          let store =   window.open("","","width=400px, height=400px");
+          store.document.write("Student Name :" + name + "<br>");
+          store.document.write("Student Address :" + address);
+        }
+    </script>
+</body>
+</html>
