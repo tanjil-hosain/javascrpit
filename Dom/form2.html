@@ -40,6 +40,35 @@
         </fieldset>
     </form>
 
-   
+    <script>
+        function info(){
+            let name = document.form.name.value;
+            let email = document.form.email.value;
+            let address = document.form.address.value;
+            let curse = document.form.curse.value;
+            let gender = "";
+            let education = "";
+
+            store = window.open("","", "width=300,height=300");
+            for(let i=0; i<document.form.gender.length; i++){
+                if(document.form.gender[i].checked){
+                    gender= document.form.gender[i].value+ ""
+                }
+
+            }
+
+            for(let i=0; i<document.form.education.length; i++){
+                if(document.form.education[i].checked){
+                    education += document.form.education[i].value +","
+                }
+            }
+            store.document.write("Student Name:" + name + "<br>");
+            store.document.write("Student Email:" + email + "<br>");
+            store.document.write("Student Address:" + address + "<br>");
+            store.document.write("Student Gender:" + gender + "<br>");
+            store.document.write("Student Education:" + education + "<br>");
+
+        }
+    </script>
 </body>
 </html>
