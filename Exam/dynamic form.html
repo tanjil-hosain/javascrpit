@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#" name="form">
+        Name: <br>
+        <input type="text" name="name"> <br> <br>
+        Email: <br>
+        <input type="text" name="email"> <br> <br>
+        Password: <br>
+        <input type="text" name="password"> <br> <br>
+        Curse: <br>
+        <input type="checkbox" name="curse" value="HTM">HTML
+        <input type="checkbox" name="curse" value="Javascript">Javascript
+        <input type="checkbox" name="curse" value="PHP">PHP <br> <br>
+        Gender: <br>
+        <input type="radio" name="gender" value="Male">Male
+        <input type="radio" name="gender" value="Female">Female
+        <br> <br>
+        Department: <br>
+        <select name="dpt" id="">
+            <option name="dpt" value="CSE">CSE</option>
+            <option name="dpt" value="EEE">EEE</option>
+            <option name="dpt" value="MBA">MBA</option>
+        </select> <br>
+        <input type="submit" value="Submit" onclick=" return form_validation()">
+        <input type="reset" value="Reset">
+
+    </form>
+
+    <script>
+        function form_validation(){
+            let name = document.form.name.value;
+            let email = document.form.email.value;
+            let password= document.form.password.value;
+            let curse="";
+            let gender= "";
+            let dpt= document.form.dpt.value;
+
+            
+             if(name==""){
+                alert("Feild must not be empty");
+                return false;
+             }
+
+             if(email==""){
+                alert("Plase Insert Your email");
+                return false;
+             }
+             if(email.indexOf("@")== -1 || email.indexOf(".")== -1){
+                alert("your email is invalid");
+                return false;
+             }
+
+             if(password==""){
+                alert("please enter your password");
+                return false
+             }
+             if(password.length<5 || password.length>=8){
+                alert("Password lenth must be minimum 5 and maximum 6 charecter");
+                return false;
+             }
+
+
+            for(let i=0; i<document.form.curse.length; i++){
+                if(document.form.curse[i].checked){
+                    curse += document.form.curse[i].value+ ""
+                }
+
+            }
+
+            for(let i=0; i<document.form.gender.length; i++){
+                if(document.form.gender[i].checked){
+                    gender = document.form.gender[i].value +","
+                }
+            }
+
+             store = window.open("","", "width=300,height=300");
+
+            store.document.write("Student Name:" + name + "<br>");
+            store.document.write(" Email:" + email + "<br>");
+            store.document.write("Password:" + password + "<br>");
+            store.document.write(" Curse:" + curse + "<br>");
+            store.document.write(" Gender:" + gender + "<br>");
+            store.document.write("Department:"+ dpt);
+        }
+    </script>
+</body>
+</html>
